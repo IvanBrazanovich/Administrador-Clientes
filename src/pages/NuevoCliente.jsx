@@ -10,7 +10,7 @@ const NuevoCliente = () => {
         Llena los siguientes campos para registrar un cliente
       </p>
 
-      {/* <Formulario /> */}
+      <Formulario />
     </div>
   );
 };

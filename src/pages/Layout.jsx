@@ -5,7 +5,7 @@ const Layout = () => {
     //Select all links
     const allSiblings = activeBtn
       .closest(".layout-links")
-      .querySelectorAll(".btnLink");
+      .querySelectorAll("a");
 
     //Remove active state to everyone
     allSiblings.forEach(
@@ -17,6 +17,9 @@ const Layout = () => {
     //To Link clicked add active
     activeBtn.className =
       "text-blue-300 mt-3 block text-2xl font-semibold btnLink";
+
+    console.log(allSiblings);
+    console.log(activeBtn);
   };
 
   return (
