@@ -2,6 +2,7 @@ import { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./pages/Layout";
 import NuevoCliente from "./pages/NuevoCliente";
+import Clientes from "./pages/Clientes";
 
 function App() {
   return (
@@ -11,9 +12,12 @@ function App() {
           <Layout />
         </div>
 
-        <Routes>
-          <Route path="/nuevo-cliente" element={<NuevoCliente />} />
-        </Routes>
+        <div className="col-layout w-3/4">
+          <Routes>
+            <Route path="/" element={<Clientes />} />
+            <Route path="/nuevo-cliente" element={<NuevoCliente />} />
+          </Routes>
+        </div>
       </div>
     </BrowserRouter>
   );

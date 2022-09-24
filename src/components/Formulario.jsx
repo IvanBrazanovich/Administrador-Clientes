@@ -2,27 +2,9 @@ import React from "react";
 import { useFormik } from "formik";
 
 const Formulario = () => {
-  const formikInfo = useFormik({
-    initialValues: {
-      nombre: "",
-      empresa: "",
-      email: "",
-      telefono: "",
-      notas: "",
-    },
-  });
-
-  const handleSubmit = (e, values, otro) => {
-    e.preventDefault();
-    console.log(formikInfo.values);
-  };
-
   return (
     <div className="Formulario text-gray-700 ">
-      <form
-        onSubmit={(e, values, otro) => handleSubmit(e, values, otro)}
-        className="container w-4/6 mx-auto mt-10 bg-white rounded-xl p-7 "
-      >
+      <form className="container w-4/6 mx-auto mt-10 bg-white rounded-xl p-7 ">
         <h2 className="text-center text-xl uppercase font-bold mb-5 ">
           Agregar Cliente
         </h2>
@@ -39,8 +21,6 @@ const Formulario = () => {
             name="nombre"
             id="nombre"
             placeholder="Nombre del cliente"
-            onChange={formikInfo.handleChange}
-            value={formikInfo.values.nombre}
           />
         </div>
 
@@ -57,8 +37,6 @@ const Formulario = () => {
             name="empresa"
             id="empresa"
             placeholder="Nombre de la empresa"
-            onChange={formikInfo.handleChange}
-            value={formikInfo.values.empresa}
           />
         </div>
 
@@ -72,8 +50,6 @@ const Formulario = () => {
             name="email"
             id="email"
             placeholder="Email del cliente"
-            onChange={formikInfo.handleChange}
-            value={formikInfo.values.email}
           />
         </div>
 
@@ -90,8 +66,6 @@ const Formulario = () => {
             name="telefono"
             id="telefono"
             placeholder="Telefono del cliente"
-            onChange={formikInfo.handleChange}
-            value={formikInfo.values.telefono}
           />
         </div>
 
@@ -104,8 +78,6 @@ const Formulario = () => {
             id="notas"
             name="notas"
             placeholder="Notas del cliente"
-            onChange={formikInfo.handleChange}
-            value={formikInfo.values.notas}
             rows="5"
           />
         </div>
