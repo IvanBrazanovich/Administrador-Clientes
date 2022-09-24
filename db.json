@@ -1,0 +1,87 @@
+{
+  "clientes": [
+    {
+      "id": 1,
+      "nombre": "José",
+      "empresa": "Las Cañitas",
+      "telfono": 1231231,
+      "email": "jose@gmail.com"
+    },
+    {
+      "id": 2,
+      "nombre": "José",
+      "empresa": "Las Cañitas",
+      "telfono": 1231231,
+      "email": "jose@gmail.com"
+    },
+    {
+      "id": 3,
+      "nombre": "José",
+      "empresa": "Las Cañitas",
+      "telfono": 1231231,
+      "email": "jose@gmail.com"
+    },
+    {
+      "id": 4,
+      "nombre": "José",
+      "empresa": "Las Cañitas",
+      "telfono": 1231231,
+      "email": "jose@gmail.com"
+    },
+    {
+      "id": 5,
+      "nombre": "José",
+      "empresa": "Las Cañitas",
+      "telfono": 1231231,
+      "email": "jose@gmail.com"
+    },
+    {
+      "nombre": "Tu vieja ",
+      "empresa": "Empresa",
+      "telefono": "123",
+      "notas": "Notas del client",
+      "email": "asdf@gmail.com",
+      "id": 6
+    },
+    {
+      "nombre": "Probando otra vez ",
+      "empresa": "asdfiojsaf",
+      "telefono": "1231231",
+      "notas": "",
+      "email": "eiojasiodf@gmai.coim",
+      "id": 7
+    },
+    {
+      "nombre": "Probando otra vez ",
+      "empresa": "asdfiojsaf",
+      "telefono": "1231231",
+      "notas": "",
+      "email": "eiojasiodf@gmai.coim",
+      "id": 8
+    },
+    {
+      "nombre": "Probando otra vez ",
+      "empresa": "asdfiojsaf",
+      "telefono": "1231231",
+      "notas": "",
+      "email": "eiojasiodf@gmai.coim",
+      "id": 9
+    },
+    {
+      "nombre": "Probando otra vez ",
+      "empresa": "asdfiojsaf",
+      "telefono": "1231231",
+      "notas": "",
+      "email": "eiojasiodf@gmai.coim",
+      "id": 10
+    },
+    {
+      "nombre": "Ivan",
+      "empresa": "Salamandra",
+      "telefono": "12311124",
+      "notas": "",
+      "email": "email@gmail.com",
+      "id": 11
+    }
+  ]
+}

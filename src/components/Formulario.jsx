@@ -2,8 +2,12 @@ import React from "react";
 import * as yup from "yup";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import Message from "./Message";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Formulario = () => {
+  const navigate = useNavigate();
+  const [error, setError] = useState(false);
   const SignupSchema = yup.object().shape({
     nombre: yup
       .string()
@@ -37,11 +41,30 @@ const Formulario = () => {
           email: "",
         }}
         validationSchema={SignupSchema}
-        onSubmit={(values, { resetForm }) => {
-          console.log(values);
+        onSubmit={async (values, { resetForm }) => {
+          //Fetch API
+          try {
+            const url = "http://localhost:3000/clientes";
+            const response = await fetch(url, {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify(values),
+            });
+
+            const res = await response.json();
+
+            if (!Object.keys(res).length > 0) throw Error();
+          } catch (error) {
+            setError(true);
+
+            setTimeout(() => {
+              setError(false);
+            }, 3000);
+          }
 
           setTimeout(() => {
             resetForm();
+            navigate("/");
           }, 3000);
         }}
       >
@@ -154,6 +177,9 @@ const Formulario = () => {
             >
               Agregar Cliente
             </button>
+            {error && (
+              <Message message="Hubo un problema al enviar el formulario" />
+            )}
           </Form>
         )}
       </Formik>
