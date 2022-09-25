@@ -4,35 +4,35 @@
       "id": 1,
       "nombre": "José",
       "empresa": "Las Cañitas",
-      "telfono": 1231231,
+      "telefono": 1231231,
       "email": "jose@gmail.com"
     },
     {
       "id": 2,
       "nombre": "José",
       "empresa": "Las Cañitas",
-      "telfono": 1231231,
+      "telefono": 1231231,
       "email": "jose@gmail.com"
     },
     {
       "id": 3,
       "nombre": "José",
       "empresa": "Las Cañitas",
-      "telfono": 1231231,
+      "telefono": 1231231,
       "email": "jose@gmail.com"
     },
     {
       "id": 4,
       "nombre": "José",
       "empresa": "Las Cañitas",
-      "telfono": 1231231,
+      "telefono": 1231231,
       "email": "jose@gmail.com"
     },
     {
       "id": 5,
       "nombre": "José",
       "empresa": "Las Cañitas",
-      "telfono": 1231231,
+      "telefono": 1231231,
       "email": "jose@gmail.com"
     },
     {
@@ -82,6 +82,14 @@
       "notas": "",
       "email": "email@gmail.com",
       "id": 11
+    },
+    {
+      "nombre": "Probando Ivan",
+      "empresa": "Probando Ivan",
+      "telefono": "12312",
+      "notas": "Probando Ivan",
+      "email": "ivan@gmail.com",
+      "id": 12
     }
   ]
 }

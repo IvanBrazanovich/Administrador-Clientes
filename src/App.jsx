@@ -14,7 +14,7 @@ function App() {
 
         <div className="col-layout w-3/4">
           <Routes>
-            <Route path="/" element={<Clientes />} />
+            <Route path="/clientes" element={<Clientes />} />
             <Route path="/nuevo-cliente" element={<NuevoCliente />} />
           </Routes>
         </div>

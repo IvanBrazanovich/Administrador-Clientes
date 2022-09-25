@@ -64,7 +64,7 @@ const Formulario = () => {
 
           setTimeout(() => {
             resetForm();
-            navigate("/");
+            navigate("/clientes");
           }, 3000);
         }}
       >
