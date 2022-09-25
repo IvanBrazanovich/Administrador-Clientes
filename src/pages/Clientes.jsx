@@ -4,6 +4,7 @@ import Cliente from "../components/Cliente";
 
 const Clientes = () => {
   const [clientes, setClientes] = useState([]);
+
   useEffect(() => {
     const fetchApi = async () => {
       try {
@@ -18,6 +19,23 @@ const Clientes = () => {
     };
     fetchApi();
   }, []);
+
+  const deleteCliente = async (id) => {
+    try {
+      const url = `http://localhost:3000/clientes/${id}`;
+      const response = await fetch(url, {
+        method: "DELETE",
+        headers: { "Content-Type": "application/json" },
+      });
+
+      const res = await response.json();
+      //Actualizar clientes
+      const newArr = clientes.filter((cliente) => cliente.id !== id);
+      setClientes(newArr);
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   return (
     <div className="nuevo-cliente container py-10 px-12 mx-auto h-screen overflow-scroll ">
@@ -36,7 +54,13 @@ const Clientes = () => {
 
         <tbody>
           {clientes.map((cliente) => {
-            return <Cliente key={cliente.id} cliente={cliente} />;
+            return (
+              <Cliente
+                key={cliente.id}
+                cliente={cliente}
+                deleteCliente={deleteCliente}
+              />
+            );
           })}
         </tbody>
       </table>
