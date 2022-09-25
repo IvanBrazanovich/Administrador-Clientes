@@ -3,11 +3,14 @@ import * as yup from "yup";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import Message from "./Message";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 const Formulario = () => {
+  const params = useParams();
+  console.log(params);
   const navigate = useNavigate();
   const [error, setError] = useState(false);
+
   const SignupSchema = yup.object().shape({
     nombre: yup
       .string()

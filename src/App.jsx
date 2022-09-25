@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./pages/Layout";
 import NuevoCliente from "./pages/NuevoCliente";
 import Clientes from "./pages/Clientes";
+import VerCliente from "./pages/VerCliente";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Routes>
             <Route path="/clientes" element={<Clientes />} />
             <Route path="/nuevo-cliente" element={<NuevoCliente />} />
+            <Route path="/ver-cliente/:id" element={<VerCliente />} />
           </Routes>
         </div>
       </div>
