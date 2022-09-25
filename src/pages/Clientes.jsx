@@ -6,10 +6,12 @@ import Spinner from "../components/Spinner";
 const Clientes = () => {
   const [clientes, setClientes] = useState([]);
 
+  console.log(import.meta.env.VITE_APP_API_URL);
+
   useEffect(() => {
     const fetchApi = async () => {
       try {
-        const url = "http://localhost:3000/clientes";
+        const url = `${import.meta.env.VITE_APP_API_URL}`;
         const response = await fetch(url);
         const res = await response.json();
 
@@ -23,7 +25,7 @@ const Clientes = () => {
 
   const deleteCliente = async (id) => {
     try {
-      const url = `http://localhost:3000/clientes/${id}`;
+      const url = `${import.meta.env.VITE_APP_API_URL}/${id}`;
       const response = await fetch(url, {
         method: "DELETE",
         headers: { "Content-Type": "application/json" },

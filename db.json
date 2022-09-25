@@ -33,20 +33,12 @@
       "id": 9
     },
     {
-      "nombre": "Probando editando",
-      "empresa": "empresa",
-      "telefono": "36215412",
+      "nombre": "Probando variables edicion",
+      "empresa": "empresa edicion",
+      "telefono": "301923129038",
       "notas": "notas",
       "email": "email@gmail.com",
-      "id": 10
-    },
-    {
-      "nombre": "Probando otra vez ",
-      "empresa": "empresa 123",
-      "telefono": "36249825",
-      "notas": "NBotas",
-      "email": "email@gmail.com",
-      "id": 11
+      "id": 12
     }
   ]
 }

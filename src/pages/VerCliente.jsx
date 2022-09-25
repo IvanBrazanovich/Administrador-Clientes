@@ -9,7 +9,7 @@ const VerCliente = () => {
   useEffect(() => {
     const fetchCliente = async () => {
       try {
-        const url = `http://localhost:3000/clientes/${id}`;
+        const url = `${import.meta.env.VITE_APP_API_URL}/${id}`;
         const response = await fetch(url);
 
         const res = await response.json();

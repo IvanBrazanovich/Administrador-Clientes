@@ -1,8 +1,7 @@
 import React from "react";
-import { useNavigate, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Cliente = ({ cliente, deleteCliente }) => {
-  const navigate = useNavigate();
   const { nombre, empresa, telefono, id, notas, email } = cliente;
   return (
     <tr className="  border-b-2 font-semibold border-slate-200 rounded-md bg-white">

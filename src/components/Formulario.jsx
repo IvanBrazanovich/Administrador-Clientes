@@ -49,7 +49,7 @@ const Formulario = ({ cliente }) => {
             //Editing mode
             let response;
             if (cliente?.nombre) {
-              const url = `http://localhost:3000/clientes/${cliente.id}`;
+              const url = `${import.meta.env.VITE_APP_API_URL}/${cliente.id}`;
               response = await fetch(url, {
                 method: "PUT",
                 headers: { "Content-Type": "application/json" },
@@ -58,7 +58,7 @@ const Formulario = ({ cliente }) => {
 
               console.log();
             } else {
-              const url = "http://localhost:3000/clientes";
+              const url = `${import.meta.env.VITE_APP_API_URL}`;
               response = await fetch(url, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
