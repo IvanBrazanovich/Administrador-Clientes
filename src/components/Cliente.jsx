@@ -1,5 +1,5 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 const Cliente = ({ cliente, deleteCliente }) => {
   const navigate = useNavigate();
@@ -19,22 +19,25 @@ const Cliente = ({ cliente, deleteCliente }) => {
         </p>
       </td>
       <td className="p-3 w-2/12">{empresa}</td>
-      <td className="flex flex-col gap-2 my-4 ">
-        <button
-          onClick={() => navigate(`/ver-cliente/${id}`)}
-          className="py-1 w-3/4 mx-auto bg-blue-600 rounded-sm text-white uppercase font-bold  "
+      <td className="flex flex-col gap-2 my-4 text-center ">
+        <Link
+          to={`/ver-cliente/${id}`}
+          className="py-1 w-3/4 mx-auto  bg-blue-600 rounded-sm text-white uppercase font-bold  "
         >
           Ver
-        </button>
-        <button className="py-1 w-3/4 mx-auto bg-indigo-800  rounded-sm text-white uppercase font-bold  ">
+        </Link>
+        <Link
+          to={`/editar/${id}`}
+          className="py-1 w-3/4 mx-auto bg-indigo-800  rounded-sm text-white uppercase font-bold  "
+        >
           Editar
-        </button>
-        <button
+        </Link>
+        <Link
           onClick={() => deleteCliente(id)}
           className="py-1 w-3/4 mx-auto bg-red-600 text-white  rounded-sm uppercase font-bold  "
         >
           Eliminar
-        </button>
+        </Link>
       </td>
     </tr>
   );

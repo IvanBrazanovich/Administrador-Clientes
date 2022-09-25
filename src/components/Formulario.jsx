@@ -3,11 +3,9 @@ import * as yup from "yup";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import Message from "./Message";
 import { useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
-const Formulario = () => {
-  const params = useParams();
-  console.log(params);
+const Formulario = ({ cliente }) => {
   const navigate = useNavigate();
   const [error, setError] = useState(false);
 
@@ -36,26 +34,40 @@ const Formulario = () => {
   return (
     <div className="Formulario text-gray-700 ">
       <Formik
+        enableReinitialize={true}
         initialValues={{
-          nombre: "",
-          empresa: "",
-          telefono: "",
-          notas: "",
-          email: "",
+          nombre: cliente?.nombre || "",
+          empresa: cliente?.empresa || "",
+          telefono: cliente?.telefono || "",
+          notas: cliente?.notas || "",
+          email: cliente?.email || "",
         }}
         validationSchema={SignupSchema}
         onSubmit={async (values, { resetForm }) => {
           //Fetch API
           try {
-            const url = "http://localhost:3000/clientes";
-            const response = await fetch(url, {
-              method: "POST",
-              headers: { "Content-Type": "application/json" },
-              body: JSON.stringify(values),
-            });
+            //Editing mode
+            let response;
+            if (cliente?.nombre) {
+              const url = `http://localhost:3000/clientes/${cliente.id}`;
+              response = await fetch(url, {
+                method: "PUT",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(values),
+              });
+
+              console.log();
+            } else {
+              const url = "http://localhost:3000/clientes";
+              response = await fetch(url, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(values),
+              });
+            }
 
             const res = await response.json();
-
+            console.log(res);
             if (!Object.keys(res).length > 0) throw Error();
           } catch (error) {
             setError(true);
